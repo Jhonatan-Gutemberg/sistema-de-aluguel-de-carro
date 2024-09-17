@@ -28,7 +28,11 @@ contratos; e outro para a construção dinâmica das páginas web.
 
 
 ## Diagrama de caso de uso:
- <img src="documents/img/Diagrama de caso de uso.png" alt="Arquitetura"/>
+![image](https://github.com/user-attachments/assets/ef8c750a-bedc-47f4-a5b4-d54203004ceb)
+## Diagrama de Classes: 
+![image](https://github.com/user-attachments/assets/06e7afa7-4245-4214-bcbf-613c6f90c7fe)
+
+
 
 
  ## Diagrama entidade relacionamento
