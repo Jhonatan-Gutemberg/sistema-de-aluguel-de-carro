@@ -1,0 +1,48 @@
+import 
+
+@Controller
+@RequestMapping("/customers")
+public class CustomerController {
+
+    @Autowired
+    private CustomerService customerService;
+
+    @GetMapping
+    public String list(Model model) {
+        List<Customer> customers = customerService.findAll();
+        model.addAttribute("customers", customers);
+        return "customer/list";
+    }
+
+    @GetMapping("/new")
+    public String createForm(Model model) {
+        model.addAttribute("customer", new Customer());
+        return "customer/form";
+    }
+
+    @PostMapping
+    public String save(@ModelAttribute Customer customer) {
+        customerService.save(customer);
+        return "redirect:/customers";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String editForm(@PathVariable Long id, Model model) {
+        Customer customer = customerService.findById(id).orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+        model.addAttribute("customer", customer);
+        return "customer/form";
+    }
+
+    @PostMapping("/{id}")
+    public String update(@PathVariable Long id, @ModelAttribute Customer customer) {
+        customer.setId(id);
+        customerService.save(customer);
+        return "redirect:/customers";
+    }
+
+    @GetMapping("/{id}/delete")
+    public String delete(@PathVariable Long id) {
+        customerService.delete(id);
+        return "redirect:/customers";
+    }
+}
