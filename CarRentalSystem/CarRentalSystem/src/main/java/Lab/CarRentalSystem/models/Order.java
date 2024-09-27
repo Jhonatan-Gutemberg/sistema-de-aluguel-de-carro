@@ -18,9 +18,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @Entity
 @Table(name = "tb_order")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
@@ -43,73 +43,10 @@ public class Order {
     private Double value;
     @Enumerated(EnumType.STRING)
     private PlanType planType;
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDate getCreationDate() {
-        return this.creationDate;
-    }
-
-    public void setCreationDate(LocalDate creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public LocalDate getDeliveryDate() {
-        return this.deliveryDate;
-    }
-
-    public void setDeliveryDate(LocalDate deliveryDate) {
-        this.deliveryDate = deliveryDate;
-    }
-
-    public boolean isStatus() {
-        return this.status;
-    }
-
-    public boolean getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public Customer getCustomer() {
-        return this.customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Automobile getAutomobile() {
-        return this.automobile;
-    }
-
-    public void setAutomobile(Automobile automobile) {
-        this.automobile = automobile;
-    }
-
-    public Double getValue() {
-        return this.value;
-    }
-
-    public void setValue(Double value) {
-        this.value = value;
-    }
-
-    public PlanType getPlanType() {
-        return this.planType;
-    }
-
-    public void setPlanType(PlanType planType) {
-        this.planType = planType;
-    }
+    @OneToOne(mappedBy = "order")
+    private CreditContract creditContract;
+    @ManyToOne
+    @JoinColumn(name = "agency_id", nullable = false)
+    private Agency agency;
 
 }

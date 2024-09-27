@@ -1,12 +1,12 @@
 package Lab.CarRentalSystem.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import Lab.CarRentalSystem.service.interfaces.ICreditContractService;
 
-@Controller
+@RestController
 @RequestMapping("/creditContract")
 public class CreditContractController {
 
