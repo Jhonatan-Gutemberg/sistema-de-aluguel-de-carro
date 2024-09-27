@@ -1,5 +1,8 @@
 package Lab.CarRentalSystem.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +26,34 @@ public class SystemUserService implements ISystemUserService {
         SystemUser systemUser = SystemUserMapper.dtoToModel(systemUserDTO);
         systemUserRepository.save(systemUser);
         return systemUser;
+    }
+
+    @Override
+    public List<SystemUser> getAllUsers() {
+        return systemUserRepository.findAll();
+    }
+
+    @Override
+    public SystemUser getUserById(Long id) {
+        Optional<SystemUser> user = systemUserRepository.findById(id);
+        return user.orElse(null);
+    }
+
+    @Override
+    public SystemUser updateUser(Long id, SystemUserRegisterDTO systemUserDTO) {
+        Optional<SystemUser> optionalUser = systemUserRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            SystemUser existingUser = optionalUser.get();
+            existingUser.setName(systemUserDTO.name());
+            existingUser.setAddress(systemUserDTO.address());
+            existingUser.setType(systemUserDTO.type());
+            existingUser.setPassword(systemUserDTO.password()); 
+            
+            systemUserRepository.save(existingUser);
+            return existingUser;
+        } else {
+            return null; 
+        }
     }
 
 }
