@@ -1,0 +1,34 @@
+/* src/components/UserProfile/UserProfile.css */
+
+.user-profile-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.user-profile-card h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.user-profile-card p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.user-profile-card strong {
+    color: #333;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin: 20px;
+}

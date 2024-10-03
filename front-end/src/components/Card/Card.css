@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.card {
+    font-family: 'Poppins', sans-serif; 
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 15px; 
+    margin: 10px; 
+    width: 250px; 
+    height: auto; 
+    transition: transform 0.2s; 
+    flex: 1 0 200px; 
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+}
+
+.card h4 {
+    color: #333; 
+    margin-bottom: 10px; 
+}
+
+.card p {
+    color: #555; 
+    margin: 5px 0; 
+}
+
+.card button {
+    margin-top: 5px;
+}
+
+.toggle-status-button:hover {
+    background-color: #7f9b43; 
+}
+
+.delete-button {
+    background-color: #e74c3c; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: background-color 0.3s; 
+}
+
+.delete-button:hover {
+    background-color: #c0392b; 
+}
