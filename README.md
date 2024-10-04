@@ -33,7 +33,8 @@ contratos; e outro para a construção dinâmica das páginas web.
 ## Diagrama de caso de uso:
 ![image](https://github.com/user-attachments/assets/ef8c750a-bedc-47f4-a5b4-d54203004ceb)
 ## Diagrama de Classes: 
-![image](https://github.com/user-attachments/assets/06e7afa7-4245-4214-bcbf-613c6f90c7fe)
+![Captura de tela 2024-10-04 174834](https://github.com/user-attachments/assets/01397c1c-90bb-42af-909f-0e8057ba0d88)
+
 
 
 
