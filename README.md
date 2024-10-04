@@ -41,4 +41,7 @@ contratos; e outro para a construção dinâmica das páginas web.
  ## Diagrama entidade relacionamento
  <img src="documents/img/DiagramaDatabase.png">
 
+ ## Diagrama de Classes: 
+ <img src="documents/img/Diagrama componentes.png">
+
 
